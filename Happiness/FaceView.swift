@@ -47,6 +47,13 @@ class FaceView: UIView {
         case Left, Right
     }
     
+    func scale(gesture: UIPinchGestureRecognizer) {
+        if gesture.state == .Changed {
+            scale *= gesture.scale
+            gesture.scale = 1
+        }
+    }
+    
     private func bezierPathForEye(whichEye: Eye) -> UIBezierPath {
         let eyeRadius = faceRadius / Scaling.FaceRadiusToEyeRadiusRatio
         let eyeVerticalOffset = faceRadius / Scaling.FaceRadiusToEyeOffsetRatio

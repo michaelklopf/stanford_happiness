@@ -19,6 +19,7 @@
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YVJ-vV-nud" customClass="FaceView" customModule="Happiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="2"/>
@@ -27,6 +28,9 @@
                                         <real key="value" value="0.25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7iP-c6-RYY" appends="YES" id="wLe-u1-kJh"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,6 +46,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rl6-SI-eCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="7iP-c6-RYY">
+                    <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="changeHappiness:" destination="qTs-Yn-Gnt" id="TMr-Jy-3Za"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="334" y="330"/>
         </scene>
